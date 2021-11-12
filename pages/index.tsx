@@ -15,7 +15,7 @@ export default function Home() {
   }, [session, router]);
 
   return (
-    <div className="flex justify-center items-center h-full">
+    <main className="flex justify-center items-center h-full">
       {!session && (
         <>
           <Button className="px-6 py-6 w-36" onClick={() => signIn()}>
@@ -23,6 +23,6 @@ export default function Home() {
           </Button>
         </>
       )}
-    </div>
+    </main>
   );
 }

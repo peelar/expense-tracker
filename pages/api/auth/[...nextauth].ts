@@ -19,6 +19,12 @@ export default NextAuth({
       }
       return token;
     },
+    // async signIn(p) {
+    //   if (account?.accessToken) {
+    //     token.accessToken = account.accessToken;
+    //   }
+    //   return token;
+    // },
   },
   secret: process.env.SECRET,
 });

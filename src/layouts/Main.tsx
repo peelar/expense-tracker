@@ -4,11 +4,11 @@ import { Nav } from "../components/Nav";
 
 export const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <>
+    <div className="bg-gray-50 h-screen flex flex-col">
       <Nav />
-      <div className="container mx-auto px-4 py-4 h-screen w-full">
+      <main className="container mx-auto px-4 py-4 w-full h-full">
         {children}
-      </div>
-    </>
+      </main>
+    </div>
   );
 };

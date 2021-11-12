@@ -8,7 +8,7 @@ import { Button } from "./Button";
 export const Nav = () => {
   const [session] = useSession();
   return (
-    <header className="px-4 py-8 w-full flex items-center justify-around shadow-md">
+    <header className="bg-white px-4 py-8 w-full flex items-center justify-around shadow-md">
       <h1 className="text-xl font-bold text-green-600 underline tracking-wide">
         <Link href="/" passHref>
           <a>Expense Tracker 💰</a>
