@@ -1,7 +1,28 @@
-import type { NextPage } from "next";
+import React from "react";
+import { useRouter } from "next/router";
+import { signIn, useSession } from "next-auth/client";
 
-const Home: NextPage = () => {
-  return <main></main>;
-};
+import { Button } from "../src/components/Button";
 
-export default Home;
+export default function Home() {
+  const router = useRouter();
+  const [session] = useSession();
+
+  React.useEffect(() => {
+    if (session) {
+      router.push("/expenses");
+    }
+  }, [session, router]);
+
+  return (
+    <div className="flex justify-center items-center h-full">
+      {!session && (
+        <>
+          <Button className="px-6 py-6 w-36" onClick={() => signIn()}>
+            Sign In
+          </Button>
+        </>
+      )}
+    </div>
+  );
+}
