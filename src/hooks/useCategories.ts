@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { useQuery } from "react-query";
 
 type Category = [string, string];
@@ -14,6 +15,9 @@ export const useCategories = () => {
     () => fetch("/api/categories").then((res) => res.json()),
     {
       refetchOnWindowFocus: false,
+      onError: () => {
+        toast.error("Something went wrong 😢");
+      },
     }
   );
 };
